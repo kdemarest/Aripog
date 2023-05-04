@@ -1,0 +1,35 @@
+{
+	"python.formatting.provider": "autopep8",
+	"python.formatting.autopep8Args": [
+		"--indent-size=4",
+		"--index-style=tab"
+	],
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4,
+	"files.associations": {
+		"*.yak": "myYakLanguage"
+	},
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+		  {
+			"scope": "keyword.myYakLanguage",
+			"settings": {
+			  "foreground": "#FFA500" // orange
+			}
+		  },
+		  {
+			"scope": "data.myYakLanguage",
+			"settings": {
+			  "foreground": "#6A9955" // green
+			}
+		  },
+		  {
+			"scope": "text.myYakLanguage",
+			"settings": {
+			  "foreground": "#FFFFFF" // white
+			}
+		  }
+		]
+	  }
+	  
+}

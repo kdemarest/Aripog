@@ -1,0 +1,51 @@
+{
+    "1000": {
+        "Type": "Region",
+        "Name": "Methane Mire",
+        "Uid": "0",
+        "Keywords": {},
+        "Summary": "Aquatic",
+        "Sentients": [
+            {
+                "Name": "Croakians",
+                "Description": "Amphibious frog-like beings with slimy skin, bulbous eyes, and webbed fingers and toes. They are skilled swimmers and often work as fishermen and hunters."
+            },
+            {
+                "Name": "Methane Dwellers",
+                "Description": "Tiny, bioluminescent creatures that live in the methane leaks throughout the swamp. They possess a unique ability to absorb and emit light, creating a mesmerizing display that attracts tourists to the region."
+            }
+        ],
+        "Ruins": [
+            "Sunken temples of the Moon Elves can be found submerged in the mire, giving insight into the ancient culture and technologies of the elves.",
+            "Ruins of ancient bunkers and bomb shelters built by humans during a long-forgotten war now serve as makeshift homes for some of the swamp's inhabitants."
+        ],
+        "Resources": [
+            "Fish and amphibious creatures for food",
+            "Methane for fuel and light sources",
+            "Plantlife for medicine",
+            "Various metals and minerals for crafting tools and weapons",
+            "Freshwater from the winding waterways",
+            "Fertile soil for farming",
+            "Rare mushrooms with medicinal properties",
+            "Lumber from the twisted trees for construction and fuel",
+            "Silk from the spiders that weave their webs between the trees",
+            "Unique textiles made from the slime secretions of the Croakians"
+        ],
+        "Hazards": [
+            "Methane leaks that can cause lethal explosions",
+            "Toxic plants and fungi that can cause sickness or death",
+            "Sudden deep pits and drop-offs in the murky water",
+            "Deadly predators such as crocodiles and giant eels",
+            "Giant leeches that suck the blood of unsuspecting travelers",
+            "Sudden and violent storms that can uproot trees and capsize boats"
+        ],
+        "Creatures": [
+            "Glowing fish that swim in the methane leaks",
+            "Giant snails with shells made from precious metals",
+            "Flying insects with bioluminescent wings that swarm in large numbers",
+            "Giant water spiders that spin webs between the twisted trees",
+            "Piranha-like fish that hunt in packs",
+            "Electric eels that use bioelectricity to stun prey"
+        ]
+    }
+}

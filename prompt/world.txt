@@ -1,0 +1,5 @@
+WORLD
+The game world is:
+Bronze age fantasy with heroes and magic.
+A great cataclysm, the loss of the sun, has plunged the planet surface into eternal winter.
+Human survivors have fled below ground, discovering endless cave networks, lost civilizations, exotic underground cities, even huge caves with entire ecosystems.

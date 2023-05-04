@@ -1,0 +1,9 @@
+watch:
+  - ./path/to/directory
+ignore:
+  - '*.log'
+  - '*.tmp'
+  - '*/cache/*'
+  - '*/.git/*'
+command: watchmedo auto-restart --directory=./ --recursive --pattern=*.py -- python main.py
+

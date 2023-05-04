@@ -1,0 +1,27 @@
+{
+	"scopeName": "myYakLanguage",
+	"patterns": [
+	  {
+		"name": "data.myYakLanguage",
+		"match": "^!",
+		"captures": {
+		  "0": {
+			"name": "data.myYakLanguage"
+		  }
+		}
+	  },
+	  {
+		"name": "keyword.myYakLanguage",
+		"match": "\\b(\\w+)=",
+		"captures": {
+		  "1": {
+			"name": "keyword.myYakLanguage"
+		  }
+		}
+	  },
+	  {
+		"name": "text.myYakLanguage",
+		"match": ".*"
+	  }
+	]
+  }

@@ -1,0 +1,984 @@
+!Region
+{context.body}
+name - a creative, themed name for this region
+summary
+biome - a one or two word identifier of the primary biome in this region.
+sentients - array. the major sentient groups in this region. Be creative. For each include Name and Description. The Name must be short, never generic, and not resemble brands IRL.
+ruins - array. the kinds of ruins in this region. Phrases
+resources -  array. up to ten natural resources the region provides for its inhabitants. Be thorough and complete with this list. Phrases
+hazards - array. Notable hazards for travelers in this region. Can be anything, but might include weather hazards, terrain hazards, creature hazards, etc. Order the hazards most dangerous first.
+creatures - considering the resources, hazards and other elements, what non-sentient creatures might exist in this region. This list should be as complete as possible.
+
+Consider the world within which this region exists. Now add amazing, creative, entertaining content to everything! Be imaginative!
+
+Generate JSON with the key Region, and the fields described above. Each gets a Name and Description. JSON ONLY. NO DISCUSSION.
+
+!Lighting
+Lighting - array. Since, in this world, the sun is gone, we must invent a common sources of light for this region. For each potential source of light, invent: Name (if it is a creature or plant name it what the locals would name it), Description, isNatural (a boolean), isCraftable (a boolean), Brightness (from 1 to 5).
+
+JSON ONLY. NO DISCUSSION.
+
+!Locales
+Lets flesh out the region's 20 key locales that players might visit.
+
+Settlements
+Ruins
+Landmarks - characteristic of this region
+
+Generate JSON with the key Landmarks, and the fields described above.
+Each gets a Name and Description.
+JSON ONLY. NO DISCUSSION.
+
+!SentientRace needs=Culture
+Now you will use creativity to detail the sentient race called "Frog-Men" in the Region data above.
+
+name - every sentient race has a name. Try not to make it too generic. Never use words from known brands or characters in the real world.
+localname - the name used in  the Region data to describe these sentients
+lifespan - the average age of death, in years. A single integer
+appearance - what do they typically look like? Add at least one creative, distinctive aspect.
+biology - what interesting biological facts exist about them?
+worldview - What does this culture think life is all about? Add one unexpected, memorable, creative, distinctive aspect.
+analog - for reference, what earth culture might these sentients resemble? And from what time period? Try to avoid anachronism. You MUST pick a culture.
+language - what is the name of their language? Try not to make it too generic. Consider the analog.
+
+Generate JSON with the key SentientRace, and the fields described above. Be Creative! JSON ONLY. NO DISCUSSION.
+
+!Culture needs=Legends, Customs
+A Culture relates to a particular SentientRace. It includes:
+
+name - the name of a Culture is regional and typically includes the name of the sentient species
+language -  what is the name of these sentient's language
+beliefs - array. one to three key beliefs that define this culture. At least one must be quirky or unexpected. Must include what happens after death.
+heroes - array one to three names of this Culture's heroes. Each name should resemble names in the SentientRace Analog. 
+antiheroes - array one to three names of people that are the subjects of moral lessons. Make an array of just their names.
+crafts - array. what this culture is known for producing. Consider the Resources in this Region.
+music - if any. It should consider their physiology.
+dance - if any. It should consider their physiology.
+construction - what material(s) do they typically build with?
+architecture - what do they live in? Try to make it entertaining and memorable.
+
+Consider the SentientRace, Region and World within which this SentientRace exists. Be creative!  Generate JSON with the key Culture, and the fields described above. JSON ONLY. NO DISCUSSION.
+
+!Legends referto=Culture
+These are the legends of a Culture. Make one entry for each name in the Heroes list, and for each name in the Antiheroes list.
+
+For each entry include:
+name (of the legend)
+legendtype (Cautionary for antiheroes and Heroic for heroes)
+protagonist (the name of the hero or antihero involved)
+legend (appropriate to the LegendType)
+monsters (use a specific identifier for each)
+items (any specifically named items involved in the legend, or make up important items the hero or antihero was using. Use a specific identifier for each.
+
+Be creative!  JSON ONLY. NO DISCUSSION.
+
+For now just make the first legend.
+
+!Customs
+The Culture above has interesting and creative customs. For each type of custom, below, there can be none, in which case leave the field blank.
+
+address -  how certain members of the culture address certain other members.
+greeting - how they tend to greet each other.
+children - how are children treated?
+comingofage
+marriage
+elderly - how are the elderly treated?
+funerary - what is a funeral like. What happens to the spirit, if anything? What happens to the body?
+genderroles
+breakfast - typical breakfast of the common people.
+tablemanners
+teaching - how is knowledge passed through the generations?
+other - array. one to two other notable customs or traditions, not including those above, that impact daily living. Each entry gets a Name and Description.
+celebrations - array. one to six holidays or celebrations. Each entry gets a Name, Description, Activity (like a ritual, parade, dance, or whatever), and Meal.
+
+Generate JSON with the key Customs, and the fields described above. JSON ONLY. NO DISCUSSION.
+
+
+!Settlement
+A Settlement is a place where members of a SentientRace live together. Consider the Region and what you know about the SentientRace's culture and customs.
+
+name - make it distinctive and non-generic. Avoid IRL brand name or IP.
+settlementtype - examples include hamlet, village, town, outpost, fort, monastery, convent, abbey, priory, colony, refugee camp, logging camp, mining camp, research camp, observatory, prison, ranch, trading post, guard post, commune, manor, or something you invent. Cities are very rare. 
+purpose - what is the purpose of this settlement? Why is it here? Examples include residential, religious, military, trading, labor (eg mining), observation, etc.
+history - How did this settlement start? How has it changed?
+hub - the most important meeting area
+defenses - array. the defenses this Settlement has. Often "none". Consider the Hazards in this Region.
+primaries - that identity of what sentients primarily dwell in this settlement.
+secondaries - a list of what other sentients dwell here. This can be empty.
+setting - what kind of landscape surrounds the Settlement 
+industry - up to ten ways people make a living here, in order of importance. Names only.
+exports - up to ten things this Settlement exports elsewhere, in order of importance. Names only.
+imports - up to ten things this Settlement imports from elsewhere, in order of importance. Names only.
+
+Generate a JSON object with the key Settlement and all the fields above.
+
+JSON ONLY. NO DISCUSSION.
+
+!Happening
+Happenings are recent things that happened in a Region or Settlement. They can be VERY wide ranging.
+
+Possibilities for the happeningtype include:
+Raid - by a locally appropriate organized group
+Attack - by a certain kind of locally appropriate monster or swarm
+Sighting - on a notable creature or phenomenon
+Shortage - of food, water, or other consumable resource.
+Capture - of a wanted person or troublesome monster
+Slaying - of a settlement member or a notable monster
+Murder - of a settlement member
+Scandal - involving a settlement member
+Conspiracy - a conspiracy is unmasked
+Political - an election
+Discovery - of the lair of a monster
+Monster intrusion
+Haunting
+Outbreak - of a disease, or a strange misunderstood phenomenon
+Sighting of a notable thing, like a rare monster, a god, a notable person
+Crime - an unsolved crime
+Trial - of a settlement member
+Disappearance - of a person or notable object
+Festival - a celebration, harvest, or traditional celebration
+Trader - notable trader arrives, has departed, or made a new major deal
+Visitor - could be a noble, a magician, or who knows what
+Disaster - a natural disaster like a fire, flood, and so on.
+Feud - a feud has started between notable people or groups
+
+Use a truly random number to pick a Happening from the above list.
+Be very creative!
+The Happening should have:
+happeningtype
+title
+description
+playerrole (leave this blank).
+
+JSON ONLY. NO DISCUSSION.
+
+!Extraction
+Our task now is to compile lists of certain key elements. The list must be arrays. You must CAREFULLY and THOROUGHLY examine all prior text generated so far to produce:
+
+SettlementTypes - array. Every type of settlement mentioned. Be sure to include the descriptor, if any. INCLUDE ALL DESCRIPTORS. 
+Work - array. All mentioned forms of work, crafts, jobs that this SentientRace performs
+Resource - array. All natural resources and raw materials mentioned.
+People - array. All specific people mentioned or strongly implied (not general races).
+ItemInstances - array. All specifically identified items mentioned (not general item types)
+ItemTypes - array. All items, but not natural resources, mentioned that are not specifically identified. Keep any descriptors.
+CreatureTypes - array. All types of creatures mentioned.
+FloraTypes - array. All types of flora mentioned.
+MineralTypes - array. All types of minerals, gems, crystals, ore, minable metals mentioned.
+Creatures - array. All types of fauna, animals, creatures or monsters mentioned.
+
+JSON ONLY. NO DISCUSSION.
+
+!Creature
+We need to invent a Creature that inhabits this Region.
+
+What kind of creature is it?
+How does it relate to the Region?
+To the sentients in the Region?
+How does it fit into its ecosystem?
+What does it eat?
+Is it a hazard to sentients?
+Does it provide harvestable resources?
+Does it facilitate production of a resource?
+In what kind of place can it be found?
+
+Carefully consider the World and Region
+JSON ONLY. NO DISCUSSION.
+
+!CreatureInit partof=Creature
+A Creature is any organism in the game world, including the player. Creatures include all types of monsters such as goblins, constructs, undead, stone gargoyles, incorporeal ghosts, magical beings of fire or air, and more.
+
+The JSON fields composing a Creature are:
+Name - the one to three word name of this creature.
+Description - a complete description of this creature. All explanatory information goes here.
+OffenseList - an array all characteristics that might cause harm to an enemy, including a creative and elaborate Description.
+DefenseList - an array of string descriptions of all characteristics that might help keep this creature from harm when attacked
+isCreature - always true
+Power - the power level from 0 to 100. An average ,human is power level 5.
+Health - how much health it has. An average human has 10.
+Team - can be Good, Neutral or Evil
+
+Generate the creature. Put the result in JSON. Do not type anything other than JSON. JSON ONLY. NO DISCUSSION.
+
+!Taxon partof=Creature
+Taxon - describes the primary category into which a creature falls. The Taxa are:
+Animal - including magical or giant animals
+Plant
+Fungus
+Insect - any non-spider
+Spider
+EarthChild - humanoid monsters like goblins, ogres, trolls; spawn of the earth god; includes dwarves.
+SunChild - spawn of the sun god: either angelic being or mundane human
+LunarChild - cold, merciless creatures, spawn of the moon god. Includes Elves.
+Undead
+Demon
+Planar - from another plane of existence
+Construct - machines or things built by magic
+Ooze - amorphous blob creatures
+
+Categories - An array of strings categorizing the creature. Possible categories include:
+isLiving - is an organic living creature
+isMachine - is a mechanical machine
+isUndead - a formerly living creature
+isDemon
+isPlant
+isFungus
+
+Output the Taxon and Categories for this Creature, in JSON ONLY. JSON ONLY. NO DISCUSSION.
+
+!Physicality partof=Creature
+Matter - The types of Matter are: ether, energy, metal, stone, chitin, glass, crystal, leather, cloth, wax, wood, liquid, paper, ivory, bone, plant, fungus, flesh, and special.
+
+Body - the is a general description of the body elements of a creature, including whether it has a head, hands, feet, and whether it can hold items and wear clothing
+
+BodyParts - An array of two to five body components this creature has.
+Most living or undead creatures may include: head, neck, arms, legs, blood, eye, tongue, skin, brain, bone, skull, tooth, claw, heart, liver
+Insects and Demons may include: chitin, icor
+Spiders and Demons may include: spinneret
+If the Creature extrudes a liquid it may have a body part called <liquid> gland.
+Constructs may include: oculus (for sight), gear, hasp, spring, coil
+Oozes may include: slime
+Plants may include: leaf, sap, bark, flower
+Fungus may include: stem, gill
+
+GearSlots - An array of places equipment can be worn or held. The possible gear slots are:
+Head
+Neck
+LeftArm and RightArm
+LeftFinger and RightFinger - only include if the creature could wear magic rings
+Waist - can it wear a belt
+Hip - can wear a scabbard
+leftFoot, rightFoot - can wear magical shoes or boots
+armor - can wear armor
+weapon - can hold a weapon like a sword
+ammunition - can make ready ammunition like arrows
+shield - capable of holding a shield
+
+Output the Body, BodyParts, and GearSlots for this Creature. JSON ONLY. NO DISCUSSION.
+
+!CreatureDetails partof=Creature
+We are adding more details about the Creature.
+
+Locomotion - array of object. The types of Locomotion are Walk, Jump, Hover (for magical creatures with no limbs), Fly, Climb, Swim, Blink (teleport short distances), Dig (move underground), Phase (move through any solid object), Glide.
+
+Speed - the speed of a mode of locomotion. An average human moves 1.0
+
+isStable - they have more than two feet
+
+Senses - An array of this Creatures Senses, each with an acuity rating from poor to excellent. The possible Senses are:
+Sight
+Darkvision
+Hearing
+Smell - eg humans smell is 0.2, and bloodhounds are 1.0
+Life - detect any living creature
+Thermal - detect heat
+Echo - detect physical objects with sound, like a bat
+Vibration - Detect things that move
+MagicSense - Detect magic
+Xray - See things through walls
+Greed - Detect valuables
+Invis - Detect invisible things
+
+Output JSON for this Creature's Locomotion, isStable and Senses. Each Locomotion has a LocomotionId and Speed. JSON ONLY. NO DISCUSSION.
+
+!Attacks partof=Creature
+An Attack is an Offense action a Creature can take.
+
+Description is the same description appearing in the OffenseList.
+
+EffectTypes is an array of strings that characterize all the aspects of an Offense:
+Physical - the victim is physically harmed.
+Mental - harms or alters the victim's mind
+Locomotion - restricts or harms the victim's locomotion.
+Sense - harms the victim's sense like sight, hearing etc.
+Other - does something else to the victim
+
+Range is the distance at which this attack operates. If the attacker must touch the enemy with a part of its body the range is typically zero. 10 meters is considered very long range.
+
+Knockback - The distance in meters an Attack knocks the victim away. Can be zero.
+Knockdown - Set true if the Attack knocks the victim down.
+
+Flags are an array that characterize the Attack.
+isInnate - true when the effect is an innate ability of the creature
+isItem - Set true if the Attack is performed by an item held by the Creature.
+isDisease - true when the effect is a disease
+isCurse - true when the effect is a curse
+isMagic - true when the effect is magical
+isWound - true when the effect inflicts a wound
+
+Generate Attacks
+Make a JSON object array called "AttackList". For each element in the OffenseList add one or more Attacks. Each Attack has the following elements: Name, Description, EffectTypes, Range, Knockback, Knockdown, Flags. Do not add new attacks. 
+
+Effects partof=Attacks
+An Effect describes the effects of an attack, defense or magic. It has the elements EffectType and EffectId. We will add an array of Effects with the key "EffectList" to each Attack.
+
+If the EffectType is Physical, choose one of these EffectIds:
+cut (like a sword), stab (like a spear), chop (like an axe), bash (like a fist, mace, head butt or tail swipe), bite, claw, burn, freeze, water (eg a paper monster is harmed by water), light (harms undead and demons), shock (eg electricity), corrode (as with acid), flesh rot, holy smite
+
+If the EffectType is Mental, choose one of these EffectIds:
+fear (flee but not heedlessly), panic (heedless fleeing), confuse, enrage (attack anyone), pacify (target stops fighting), charm (target changes alliances), possess (target's mind is taken over), enthrall (target follows any order), stun (target won't act for a while)
+
+If the EffectType is Locomotion, choose one of these EffectIds:
+grab (a small attacker latches onto an enemy), hold (a large attacked holds an enemy in place), sticky (slows enemy movement), immobilize (halts enemy movement), Knock (includes knockback and/or knockdown), paralyze
+
+If the EffectType is Sense, choose one of these EffectIds:
+blind, deafen, anosmize (halt sense of smell), numb (makes enemies drop things)
+
+If the EffectType is Other you can name the EffectId as you see fit.
+
+Generate Effects
+For each Attack add the key EffectList with one Effect for each item in EffectTypes. Make the output JSON ONLY.
+
+EffectDetails partof=Effect
+Each effect has some additional fields that we will now add.
+
+The Damage Field
+Effects of EffectType Physical have a damage number. It takes 10 damage to kill a normal person.
+
+The Duration Field
+Effects of EffectType Physical or Effects that are over immediately have Duration 0. All others have a Duration in turns, chosen as follows:
+Attacks that prevent the enemy from acting normally are short: 1-4 turns.
+Attacks that reduce the enemy's combat effectiveness can be 1-6 turns.
+Attacks with mild disabling effects can last longer, up to 40 turns.
+
+The OngoingDamage Field
+Some Effects MIGHT have additional damage which is inflicted over time, called OngoingDamage. These include grab, burn, freeze, corrode, flesh rot, poison and disease. Weak OngoingDamage is 0.1, while powerful OngoingDamage is 2.0.
+
+Refine Effects
+For each Effect amend the Effect with the following elements: Damage, Duration, OngoingDamage.
+
+!CultureRoster
+The Roster of the World's Cultures includes:
+Humans - Desperate human refugees seeking any means of survival
+Dwarves - Ancient subsurface dwarven culture of builders. They know how to survive the underground world.
+Ilargians - Ruins of a once great elvish civilization. The Ilargians have fled the world.
+Formians - An ant like race where the Queen is the only sentient
+Goblins - barbaric, primitive and magical clans that raid the dwarves, and enslave both creatures and sentients
+
+!Story
+A Story leads to a series of Adventures. It includes:
+
+Name - the title of this story
+StoryType - can be one of: Epic, Major, Minor, SideQuest
+Situation - the situation that requires adventurers to resolve it
+Twist - an unexpected twist
+Challenges - array. key challenges players will face
+Resolution - array. most likely resolution to the situation, and two other less likely resolutions.
+Characters - the names of the most important people, monsters or entities, that are pivotal to the situation. Tends to include protagonist, antagonist, and main ancillary characters. The protagonist is usually the player.
+Adventures - an array of the adventures the players must experience to overcome the challenges and resolve the situation. Each has a string id, a title and a description.
+Motivation - why the players would be interested in resolving the situation 
+
+Produce a Story involving:
+The 
+
+JSON ONLY. NO DISCUSSION.
+
+!Adventure
+The Adventure Template is:
+
+id - the string id of the adventure
+title - the title of the adventure
+description
+areas - an array of places the players must visit to complete the adventure. Each area has an id, name, summary, and areaType.
+
+The areaType can be Dungeon, Settlement, Outpost or Wilderness.
+
+Generate each adventure in the story above.
+
+!Dungeon
+A dungeon is a series of connected places the players can visit to complete part of an adventure.
+
+The Dungeon Template is:
+Name
+Entry - a general description of the first space one encounters when entering this dungeon.
+Climax - a description of the final space in this dungeon, often where a climactic confrontation happens.
+
+List a series of rooms, in order, for this dungeon. 
+
+!Room
+A room in a building.
+{Place}
+
+!Place
+A place meant to be visited by players.
+name - a name for this Place
+dimensions - array. this place's horizontal and vertical size
+monsters - array. Affix with #1, #2, etc.
+characters - array. Each non-monster character present. Affix with #1, #2 etc.
+treasure - array. Each item. Exclude coins.
+decor - array. Every non-treasure item.
+egress - array. every exit from this place
+lighting - the type of light illuminating the room. May be "none"
+
+Your response must be in JSON, like in a shell.
+
+FACTION TEMPLATE
+A faction indicates a group with which a creature or set of creatures affiliates and primarily is used to determine who will attack or flee from whom. For example, herbivores attack nobody, but flee from carnivores. Carnivores attack anything they perceive as a prey animal. The Faction Template is:
+
+Name - the faction name
+Attack - an array of what other factions this faction will attack
+Flee - an array of what other factions this faction will attack
+
+GENERATING
+Generate the DamageType list as a JSON object with DamageTypeList as the key.
+Generate all Conditions as a JSON object ConditionList as the key.
+Generate the MatterType list as a JSON object. 
+Generate the Senses list as a JSON object, with the sense name as the key. The fields are "Name" and "Description".
+Generate a Creature in JSON using the following fields. It lives in a swamp, is fairly powerful, and can live on both land and water.
+
+
+CONDITION
+A condition is a rating from 0.0 to 1.0 indicating whether a certain condition is impacting a creature. The ConditionType template is a prototype of a condition. The list of ConditionTypes is:
+Hunger - how hungry the creature is.
+Weakened - a rating of how abnormally weak the creature is, from hunger, lack of sleep, or other effects.
+Stunned - the creature momentarily cannot think or act
+Paralyzed - the creature can not move or speak
+Silenced - the creature's speech generates no hearable noise
+Bleeding - the creature is losing blood and taking damage over time
+Poisoned - the creature is suffering from the effects of a poison
+Burning - the creature is on fire and taking damage over time
+Freezing - the creature is is so cold that they move move slowly and may be suffering damage
+Immobile - the creature is stuck in place and cannot move from that spot
+Invisible - the creature is invisible
+Silent - the creature is silent
+Odorless - the creature emits no odor
+Dull - the creature emits no detectable magic
+
+
+ITEM TEMPLATE
+An item is any object found in the game world. An Item Template is a prototype after which item instances will be patterned. The Item Template is:
+
+Name
+Weight
+Value
+Power - the power level of the object, from 0.0 to 1.0
+Rarity
+BunchSize - how many typically are found at a time
+Effect - the one to three word name of the primary Effect this item causes when used.
+DamageType
+Matter - the Matter of which this item is primarily composed.
+isWeapon - a boolean
+isAmmunition - a boolean
+Launcher - if this item can be ammunition, the is a classification of the weapon type that fires it, for example "Bow" for and arrow, or "Sling" for a stone.
+Keywords - a comma separated list of keywords that describe what this thing is, in the format isKeyword1, isKeyord2.
+Quickness - how fast the weapon can be used to make an attack, from 0 to 1 where 1 is fastest.
+mayThrow - can a user throw this object to inflict damage?
+Range - the range this can be hurled by an average person, considering weight and aerodynamic shape
+
+EFFECT TEMPLATE
+An Effect is some operation performed upon one or more creatures, items, or areas in the world. Most items have an Effect, for example a potion might increase strength, while a sword might cause damage of a certain DamageType. 
+
+The Effect Template is a prototype defining an Effect. The fields in the Effect Template are:
+Name - the name of the effect.
+Description - a one sentence brief description of the effect.
+Visual - an detailed description of the magical effect, if any, when this effect is applied.
+Usage - the primary purpose of the effect, one of "Tactical", "Buff", "Debuff", "Heal", or "Harm". See below.
+isHelpful - true or false expressing whether this effect is helpful to the target
+isHarmful - true or false expressing whether this effect is harmful to the target
+doesPlayerOnly - boolean whether only the player can have this effect on them.
+doesCreatures - a boolean telling whether this effect effects creatures
+doesItems - a boolean telling whether this effect effects items
+doesTiles - a boolean telling whether this effect effects tile places in the world
+isInnate - true when the effect is an innate ability of the creature
+isDisease - true when the effect is a disease
+isCurse - true when the effect is a curse
+isMagic - true when the effect is magical
+isWound - true when the effect inflicts a wound
+TargetType - One of "Creature" (any monster or the player), "Item" or "Tile" (meaning a place in the world gets the effect)
+Rarity - a float from 0.0 to 1.0 describing how rare the item is to find.
+Operation - what this effect actually does. See below.
+DurationType - can be "Instant", "Transient" (lasts a while them stops), or "Permanent"
+Duration - if DurationType is Transient this is how long the effect lasts. Typically 10 rounds.
+
+The possible values of Operation are:
+Damage - do harm to the target's health. Includes the fields Amount and DamageType.
+Senses - grant the target a sense they might not game. Includes the field "Sense" which is the sense granted.
+Mobility - grant 
+Compulsion - change the target's attitude
+Condition - confers a condition upon the target.
+Resist - adds the Stat to this creature's list of Resistances. The Stat must be a DamageType, a Sense (meaning you are less likely to be detected with that sense), Compulsion or Condition
+Immune - adds the Stat to this creature's list of Immunities. The Stat must be a DamageType, Sense (meaning you can not be detected with that sense), Compulsion or Condition
+
+EFFECT
+An effect has all the fields in the EffectType Template, and also has these fields:
+isDisease - true when the cause of the condition is a disease
+isCurse - true when the cause of the condition is a curse
+isMagic - true when the cause of the condition is a magical effect
+isWound - true when the cause of the condition is a wound
+
+==========================================
+
+
+DAMAGETYPE TEMPLATE
+The DamageType list is a JSON object. The key for each DamageType is the DamageType id. Each element contains these fields:
+Name
+Description
+
+
+MATTERDAMAGE
+For each type of Matter, the MatterDamage is an object of key/value pairs which, for each DamageType, indicates the effectiveness of that damage against that type of matter, represented as a value from 0.0 to 2.0. For example, against the matter Glass, the DamageType Bash is twice as effective, which Bash is half as effective against the matter Metal. If it is difficult to imagine how a DamageType would normally harm a certain Matter, then make it do zero damage, for example light vs stone. Do not include any value that is 1.0.
+
+RECIPE
+Here is the template for producing a recipe in JSON.
+
+Using the JSON from the IngredientRoster gave you above, and assume that the keys are also the names of the items. Output the recipe as JSON in the keyword "Recipe". Indicate: Name - the name of the potion; Ingredients - an array with the each ingredient from the list above.
+
+Please produce a recipe for making a potion which, when you throw it, smashes and generates light.
+
+
+!Layout
+Create a new JSON object called "Layout"
+For each room, do the following two things:
+1. In a section called "For each creature, treasure, trap, and decor, indicate the location in the room. Object may be
+* Carried by creature
+* Near a wall, creature, or other room element
+* Upon another room element
+
+Respond in JSON.
+
+!Recipe
+For a computer game RPG generate the following lists:
+1. Monsters: 5 monsters with the fields with Name, PowerLevel, Description
+Parts: A list of monster parts.
+ that can be harvested from the monster either while alive or once dead. Include:
+Name
+Description, a boole
+Items: 5 magic items and also one item per part, with descriptions
+Recipes: 5 recipes to produce those magic items, each using two or more items as ingredients.
+If a recipe requires and ingredient that was not initially considered in the items list, please add that ingredient to the items list.
+
+Respond in JSON.
+
+!Item
+For each treasure element in the room indicate:
+Id - unique identity
+Name
+Weight
+Value - how many gold pieces
+
+The result must be JSON.
+
+!Book
+For the book "ancient tome", please generate the following:
+Title - The title of the work. It should be relevant to the setting in which it was found.
+Visuals - A rich, vivid visual description of the item
+Summary - a paragraph summarizing the content of the book.
+SpellId - The one to three word name of the spell caused by reading the book
+Uses - How many times the effect will be produced by reading the book.
+
+The result must be JSON.
+
+!Spell
+A spell is the magical result of some action. For the spell "xxx", please generate the following:
+
+name - the name of this spell
+summary - what the spell does
+targettype - Does the spell affect Creatures, Objects, Terrain, or Spatial Zones?
+playeronly - true if the spell affects only the player
+range - how far the spell's effect can start from the caster
+radius - the radius of the spell's effect. If it is one creature or object the radius is 0.
+effectid - a one to three word name of the effect
+effecttype - (see below)
+
+The effecttype is a classification that matches the description. When ambiguous choose later items in the list over earlier ones. It must be one of the following:
+Senses - the effect alters the target(s) senses
+Detection - causes the target(s) to be able to detect something otherwise undetectable
+Movement - helps or hinders movement of the target(s)
+Healing - heals the target(s)
+Damage - causes physical damage to the target(s)
+Condition - inflicts a condition on the target, like weakness, paralysis, stunning, etc.
+Summon- summons a creature that joins your party
+Morph - changes the target(s) form, like a polymorph
+
+The result must be JSON.
+
+!EffectDamage
+For the effect "xxx" please generate the following:
+DamageAmount - the range of damage the effect inflicts
+DamageType - the one-word type of damage inflicted
+ImmuneList - a list of creature categories that are usually immune to this damage
+Duration - if the damage wears off this indicates how many minutes. If never the value is -1.
+
+The result must be JSON.
+
+!EffectSense
+Sense - If the spell alters a sense this is Sight, Hearing, or Smell
+Detection - If the spell detects something, this is the category of thing it detects.
+Damage - if
+Shape - If the target is an area, this is the shape. It can be Circle, Beam, 
+A creative, interesting, unusual magic effect produced by reading the book.
+
+The result must be JSON.
+
+Ai opportunities
+Npc can say "you don't sound like a dwarf"
+Bring up topics you, as a gnome, would clearly care about.
+Or that you, as a wizard, would care about.
+Or fear you because... Respect you because...
+Comment on your wounds
+Hey, where is <hireling>? The dead one
+You can "become known for... Kicking chickens, bringing iron ore, etc.
+
+ENVIRONMENT TILES
+stone floor closeup from above --tile
+
+!Wilderness
+Here are all the categories of wilderness:
+swamp, forest, plains, mountains, river, volcano, chasm, cliff, beach, sea
+
+WILDERNESS TYPES 
+We are brainstorming all of the categories of wilderness areas that might appear in a world of adventure. We want to be very complete. I'll start: swamp, forest, plains, mountains, river, volcano, chasm, cliff, beach, sea. Your response should include my list and all the others you can think of. Respond in JSON. Use the key WildernessTypes for the list. Each should include:
+Name
+Description - a description of the landscape elements, but not where this type of landscape is to be found on earth.
+FeatureOptions - an empty array
+
+
+Problem - the key problem that players are solving in this dungeon. Avoid generic problems. Be creative.
+Motivation - why the players would be interested in entering the dungeon
+Solution - what the players are trying to accomplish
+Opportunities - a list of opportunities this dungeon provides for players to improve themselves
+Plot - a list of one to five key plot elements for the players to resolve
+AreaList - a list of one to five areas in this dungeon. An area can be any adventuring space and may contain multiple spaces within it. Each area has a one to five word name and a description. Put the areas in the order that players are likely to encounter them.
+
+Your response must be in JSON, like in a shell.
+
+!Activity
+Describes what a creature is currently primarily doing. Each activity has these fields:
+Product - what the activity produces, if anything
+
+The list of activities is:
+Eat
+Sleep
+Spectate - watching an event without participating, like a play or speech
+Worship - praising a god
+Forge
+Brew
+Cook
+Sew
+Mine - digging for ore with a tool
+Fight - engaged in combat with others, possibly suffering a wounds or effects.
+Fish
+Hunt
+Farm
+Gather - moving about collecting resources
+Repair - fixing item(s)
+Ritual - performing a magic ritual
+Teach
+Learn
+Explore
+Patrol - move across an area, often in a pattern, on the lookout for trouble
+Guard - guard a place, standing stationary
+Escort - escort another creature, guarding it at the same time
+Negotiate - performing a diplomatic function
+Spy - watching a person to learn what they'll do
+Sabotage - perform a harmful act against an object without being noticed
+Aid - Performing medical procedures or first aid
+Train - training at a skill
+Act - to perform in a play
+Instrument - to play an instrument in a performance
+Draw - creating a picture with paint or other medium
+Carve - to make a statue of whatever material
+Whittle - to use a little knife to shape a piece of maleable material
+Command - to issue order to followers and lead them
+Govern - Engage in politics or governance
+Research - to read books to gain skill or advance a technology
+Experiment - to make experiments to advance a technology
+
+ADVENTURESCAPE
+The AdventureScape identifies adventurous aspects of a subject. The subject might be a region, a settlement, or a person. The QuestScape includes:
+
+Subject - who or what this is about: a specific region, settlement or person.
+Problem - A threat to the Subject that could be an adventure for a Hero
+Opportunity - Something this Subject offers could be an adventure for a Hero. Make it unrelated to the Problem above.
+Benefit - Something about this Subject that could benefit a Hero. Make it unrelated to the Problem or Opportunity above.
+
+Make an AdventureScape for this Settlement.
+
+Carefully consider the World, Region, SentientRace, Culture and Settlement. Generate a JSON object for this Settlement. JSON ONLY. NO DISCUSSION.
+
+
+
+
+=======================================================
+
+PREFACE
+
+PERSON
+A person has a these basic characteristics
+
+Name - consider the Culture Analog. Avoid IRL brands and IP.
+Age - consider the purpose of the Settlement, and the average lifespan of the race
+Appearance
+Quirk - Something noticeable that makes this person distinctive.
+Roles - An array of three roles this person takes in their community.
+Job - How they make a living, if any. Bums and dilettantes can exist too. Children might not have a job. 
+Reputation - what other members of the Settlement generally think about this person
+Power - This person's power level in a fight. 10 is a normal person. 20 is a Bear. 60 is a master necromancer. 100 is a God.
+
+A Quirk might be any of these:
+Bodily like a tattoo, scar, missing limb or striking facial feature
+Mannerism like a distinctive laugh, throat clearing, fidgeting with an object, etc
+Clothing that reveals something about them
+An item or food they carry or wear that reveals something about them
+Facial expression
+Catchphrase
+Pet that is always with them.
+
+Consider the World, Region, Settlement, Culture and Customs.. Generate JSON with the key Person, and the fields Name, Age, Appearance, Quirk, Roles, Job and Power.
+
+JSON ONLY. NO DISCUSSION.
+
+RELATIONS
+Create an array of core Relations for this Person, which includes Mother, Father, Spouse (might have none), up to 5 siblings, and their two closest friends.
+
+Rapport is the how this Person relates to a certain Relation. It might describe their emotions, feelings, or how they relate in general to that person.
+
+Generate a JSON array with the key Relations. Each Relation has Name, Relationship (Parent, Spouse, Sibling, Friend), Age, Rapport, Description, Alive (true or false).
+
+JSON ONLY. NO DISCUSSION.
+
+MENTALITY
+Trauma - A past trauma, the biggest of this Person's life.
+Love - what this Person loves
+Hate - what this Person hates
+Hopes - what this Person hopes for
+Fears - what the Person fears
+Moral Strengths
+Moral Flaws
+
+Generate these elements under the key Mentality.
+
+JSON ONLY. NO DISCUSSION.
+
+HISTORY
+Secrets - array. three personal secrets.
+Failure - A recent failure
+Success - A recent success
+Problem - A problem that could start an adventure for an adventurous Hero
+
+Generate these elements under the key History.
+
+JSON ONLY. NO DISCUSSION.
+
+Adventure - From Person
+Consider Korba's personal aspects. When meeting a friendly and resourceful adventurer, what are the five most important topics that DIRECTLY relate to Korba's situation that Korba might bring up? Assume the adventurer is likely willing to help, even if there isn't much reward. Put them in order of likelihood, and use headings.
+
+
+CONVERSATION
+You are now simulating the speech and actions of person the RPG game world.
+
+I will be speaking as Rathgar, an adventurer wearing chain armor, with a sword at his left hip, dark hair, an easy smile and a charming demeanor. Rathgar is dirty and has a bit of blood on his left leg from a recent fight with a goblin. The goblin's head is slung over his shoulder as a trophy.
+
+This Person and Rathgar meet in the town square
+
+
+BACKGROUND
+
+Background: A brief background for Emily
+Appearance: What does Emily look like? Give her at least one distinctive or unusual aspect of her appearance than makes her memorable.
+Mannerisms: One noticeable, quirky mannerism that Emily has. Be very very creative.
+
+
+MIND
+Generate the Mind of this Person. Include the following elements:
+Friends: the names, ages, and a brief description of up to two of Emily's friends.
+Relationships: How Emily feels about each family member.
+Emotions: What Emily loves, hates, hopes for and fears.
+Job: What Emily does to earn money and help her family survive.
+Routine: What Emily does on a typical day in the morning, afternoon, evening, night, and overnight.
+Secrets: Any secrets that Emily keeps.
+Trauma: One past trauma Emily has suffered.
+Failure: A recent failure of Emily's.
+Success: A recent success of Emily's.
+Problem: A problem Emily has, which someone like Rathgar might help her with.
+
+Regarding the Problem that Jubilee has, solving that problem will be entertaining and engaging for Rathgar. It might be heroic, it might bring him into conflict with others, or anything else you imagine.
+
+
+==================================================================
+MODERATOR
+
+PREFACE
+You are now a game master for an RPG. You are impartial. Your role is to mediate interactions among characters and the world around them. You never add extemporaneous dialog.
+
+NOTES
+You keep notes and update them as the situation changes. Here are your notes:
+
+Overview:
+This is an adventure about two men looking for their lost dog. It should not be easy for them to accomplish! They must track their dog through the forest, following his footprints in the snow. As they do so they will have interesting, engaging and memorable encounters. If they look around there is always some indicator of where the dog went to keep the adventure moving. After a few encounters they will find the dog.
+
+Setting:
+A forest glade in winter. The sun is shining, but the air is very cold. The forest is thick and ominous.
+
+Creatures:
+Bob, a 23 year old man wearing winter clothing. The friend of Fred.
+Fred, a 65 year old man wearing winter clothing. The friend of Bob.
+
+Items:
+None
+
+Progress:
+There is no progress yet towards the goal.
+
+RecentAction:
+Bob and Fred have been walking through the forest for an hour following the tracks of their dog Sniffy who ran away. It was Bob who accidentally let Sniffy out. They entered this glade a few seconds ago.
+
+START
+You will tell Bob the setting, the situation, who he is with, what creatures he sees, and what notable items are present. Don't mention that this is an adventure. Phrase it as if Bob is thinking about these things, reviewing them in his own mind. Do NOT tell him how he feels or what he thinks! You are only telling him what he knows and what he perceives. Be very careful about these rules!
+
+LOOP
+
+SPEECH
+<person says> ...
+
+Considering all the aspects of the situation, respond with:
+Hearing - Describe how much Fred hears, and why. If he hears it all just say "All".
+Words - the exact words Fred hears.
+
+Respond in JSON with the fields Hearing and Words. JSON ONLY. NO DISCUSSION.
+
+ACTION
+<person> attempts <action>.
+
+Gate - Classify this attempted action as one of the following:
+* Absurd - the action has nothing to do with the situation and should be ignored.
+* Assumes - the action assumes certain elements that do not exist in the situation. Be fairly strict about this.
+* Complex - the action any action other than a single, discrete action. It might requires multiple steps, or be very complex.
+* Vague - if the action is immediate, like eat, walk, hit, kick, jump, 
+* Possible - the action is none of the above.
+
+Chance - Decide how likely the action is to succeed from 0 to 100%. Trivial actions are always 100%.
+
+Reasoning - why you set the chance to the value you chose.
+
+Success - true or false. Randomly determine success based on the Chance field above.
+
+Respond in JSON with the fields Gate, Chance, Reasoning and Success. JSON ONLY. NO DISCUSSION.
+
+RESULT
+Describe the results of this action:
+Description - a summary of what happened as a direct result of this action. To the extent possible Bob and Fred stay together.
+Location - are Bob and Fred in a new location, or have their surroundings changed substantially? If so describe it. If not then null.
+BobExperience - using the Description fill in what Bob just experienced
+FredExperience - using the Description fill in what Fred just experienced
+Situation - if the situation is mostly unchanged say "Unchanged" otherwise write a new description of the situation.
+BobResponse - leave this blank
+FredResponse - leave this blank
+
+Respond in JSON. JSON ONLY. NO DISCUSSION.
+
+PERCEPTION
+Consider what factual happenings Bob just perceived with his senses. Include:
+
+Saw - tell Bob what he saw with his own eyes. Nothing else.
+Heard - tell Bob what he heard with his own ears. Nothing else. If he heard nothing important just omit this heading.
+Experienced - tell Bob the facts of what happened to him. Nothing else.
+Thought - leave this blank
+Felt - leave this blank.
+
+in JSON with the fields Saw, Heard, Experienced, Thought, Felt. Use phrasing like "You see" and "you hear". JSON ONLY. NO DISCUSSION.
+
+SUMMARIZE NOTES
+Now reconsider the situation.  Update your notes as necessary to reflect the new situation, as follows:
+
+Overview - keep the overview as-is, verbatim.
+Creatures - array. add, remove, or adjust the summary of each creature in the area.
+Items - array. add, remove or adjust the summary of each item to reflect its state
+Progress - array. describe the progress that has been made towards completing the adventure. There might be None.
+RecentEvents - array. This is a strictly factual list of ONLY what has actually happened above.what Adjust this to reflect the ten most recent actions, including all speech and actions taken, and include what happened to Bob and Fred.
+
+Respond with your revised notes using the headings Overview, Creatures, Items, Progress, and RecentEvents. JSON ONLY. NO DISCUSSION.
+NPC
+GENERATION
+Imagine you are outlining a really great story about two men looking for their dog in a snowy forest. One man, Bob, is age 23. We need this story to be interesting, so he should have flaws! Now create aspects of Bob:
+Name
+Age
+Backstory
+Values - array. The key values this person holds.
+Morals - array. This person's morals.
+Traits - array. Personality traits
+Trauma - a brief description of a past trauma.
+Fears - array. Fears this person has.
+
+{Condition}
+Inject the condition of the NPC such as well rested, well fed, alert, and calm, h
+
+Create a JSON object with the key "Basics" and the fields above. JSON ONLY. NO DISCUSSION. NO ADDITIONAL HEADINGS NOR TITLE.
+
+NPC CHARACTER
+We are now role playing, like in a game. Your role is to simulate this character. Do not mention that you are an AI.
+
+If you understand write "Yes".
+
+SITUATION
+You find yourself in a situation
+
+<situation>
+
+If you understand, create the following information:
+
+HistoryWithFred - a brief summary of your history with Fred
+AboutFred - array. key things you know about Fred
+Situation - array. Facts you know about the situation
+EmotionsAboutFred
+EmotionsAboutSituation
+Intent - what you intend to accomplish in the situation.
+
+Create a JSON object with the key "Mind" and the fields above. JSON ONLY. NO DISCUSSION. NO ADDITIONAL HEADINGS NOR TITLE.
+
+
+PERCEPTION
+What they see
+What they hear
+What they smell
+What they experience 
+
+RESPONSE
+Remember that you are acting as Bob. Decide what you want to do.
+
+If you decide to speak, write "Bob says" and then what you want to say. Don't add any other discussion, or description. JUST WRITE WHAT YOU SAY ONLY.
+
+If you decide to take an action, write "Bob does the following:" and then put what you do in a single sentence. This action has a bunch of limitations, as follows:
+You are taking a single action.
+Do not describe what anyone else does.
+Do no describe what happens as a result of your action.
+Do not add how you feel or what you think about that action.
+
+
+========================
+
+Imagine Bob, a character in a role playing game. You are to describe what Bob does, with these limitations:
+
+Profile: Bob is kind, thoughtful, and reasonable. He is resilient and very persistent. If he really wants something he does not give up. He is extremely capable.
+
+Goal: Bob simply wants to make a cup of coffee.
+
+Setting: A fairly standard American kitchen.
+
+Situation: Bob stands in the Kitchen, ready to make coffee.
+
+Generate the following headings:
+Profile - Repeat Bob's Profile verbatim.
+Goal - Repeat Bob's Goal verbatim.
+Result - There is no result yet.
+Setting - Repeat the Setting, adjusting it as necessary for the last Result you heard. 
+State - the state of myself
+Carrying* - An array of objects Bob is carrying.
+Station* - The place Bob is. The station is described as "Near the X" where X is an object in the setting, like a sink or coffee maker.
+Observations - array. in the setting of the state of the place, each creature, and items present
+Plan - Bob's plan to achieve his Goal (revising it if the situation requires it)
+Step - The next Step Bob will take to further his Plan. Don't include what happens as a result of the Step. Just what Bob will do only.
+Action - A specific action Bob will take next to accomplish the Step.
+Forecast - What you think the direct and immediate result of the Action will be.
+
+The Action is like a command to a robot. The commands are:
+* Eat (an object)
+* Pick up (an object)
+* Put (an object) (preposition) (some other object)
+* Operate (something in the setting)
+* Move to (a new station, that is, near something)
+* Attack (a creature or object)
+Before Bob manipulates something he must be near it. 
+No action may assume Bob is carrying something that he is not. He'll have to use "pick up" first. THE ACTION MUST USE THE FORM DESCRIBED ABOVE.
+
+Use headings for Profile, Goal, Setting, Plan, Step, Carry, Station, Action and Forecast. Don't add new headings. Specify the first action only, then stop.
+

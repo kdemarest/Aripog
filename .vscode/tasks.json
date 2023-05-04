@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Watchmedo",
+            "type": "shell",
+			"command": "watchmedo shell-command -p '*.py' --recursive --wait --command='python main.py' .",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

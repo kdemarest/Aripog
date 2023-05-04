@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Aripog</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script>
+		class World {
+			constructor() {
+				this.substrate = {};
+			}
+			add(data) {
+				for (key in data)
+					this.substrate[key] = data[key];
+			}
+		}
+		let world = new World();
+
+		class Server {
+			getErrorFromStatus(status) {
+				const errorCode = {
+					400: 'Bad request',
+					401: 'Unauthorized',
+					403: 'Forbidden',
+					404: 'Not found',
+					429: 'Too many requests',
+					500: 'Internal server error',
+					502: 'Bad gateway',
+					503: 'Service unavailable',
+					504: 'Gateway timeout',
+				};
+				return "Network error " + status + ": " + (errorCode[status] || 'Network response was not ok');
+			}
+			async sendChat(message) {
+				try {
+					let outgoing = {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify({ message: message })
+					};
+					const response = await fetch('/chat', outgoing);
+					if (!response.ok)
+						return {
+							agent: "Browser",
+							message: server.getErrorFromStatus(response.status)
+						};
+					const data = await response.json();
+					console.log(data);
+					return data;
+				}
+				catch (error) {
+					return {
+						agent: "Browser",
+						message: error
+					};
+				}
+			}
+		}
+		let server = new Server();
+
+
+		function ManagePage() {
+			let page =
+			{
+				chat: document.getElementById('chat'),
+				userInput: document.getElementById('userInput')
+			}
+			page.chat.isAtBottom = () => {
+				let atBottom = page.chat.scrollHeight - page.chat.scrollTop === page.chat.clientHeight;
+				return atBottom;
+			}
+			page.chat.add = (agent, message) => {
+				let atBottom = page.chat.isAtBottom;
+				const container = document.createElement('p');
+				container.innerHTML =
+					"<span class='name'>" + agent + ":</span>" +
+					"<span class='message'>" + message + "</span>";
+				page.chat.appendChild(container);
+				if (atBottom) {
+					page.chat.scrollTop = page.chat.scrollHeight;
+				}
+			}
+			page.chat.addEventListener('scroll', () => {
+				// We should make an icon that shows when there is text below
+				// and you need to scroll to see it.
+			});
+			page.userInput.onUserInput = async (userMessage) => {
+				page.chat.add("You", userMessage);
+				data = await server.sendChat(userMessage);
+				if (data.world) {
+					world.add(data.world);
+					const pretty = JSON.stringify(data.world, null, 4);
+					page.chat.add("world", '<pre>' + data.world + '</pre>');
+				}
+				page.chat.add(data.agent, data.message);
+				if (data.policy != null)
+					page.chat.add("POLICY: " + data.policy);
+			};
+			page.userInput.addEventListener('input', () => {
+				userInput.style.height = 'auto';
+				userInput.style.height = `${page.userInput.scrollHeight}px`;
+			});
+			page.userInput.addEventListener('keydown', function (event) {
+				if (!(event.keyCode === 13 && !event.shiftKey)) {
+					return;
+				}
+
+				event.preventDefault();
+				page.userInput.onUserInput(page.userInput.value);
+				page.userInput.value = '';
+			});
+
+			function blab() {
+				page.chat.add("User", "hello " + Math.random());
+				page.chat.add("GPT long name", "how are you today? This is a really long message lorem ipsum so that we can read it forever hi there how are you this fine evening Joe? how are you today? This is a really long message lorem ipsum so that we can read it forever hi there how are you this fine evening Joe?");
+			}
+
+			(async () => {
+				let pingResponse = await server.sendChat("/ping");
+				if (pingResponse.message != "pong")
+					page.chat.add("System", "Failed to connect to server. Response=" + pingResponse.message);
+				else
+					page.chat.add("System", "Ready for input");
+			})();
+		}
+
+		window.onload = ManagePage;
+	</script>
+</head>
+
+<body>
+	<div id="chat">
+	</div>
+	<textarea id="userInput" placeholder="Enter your message here..."></textarea>
+</body>
+
+</html>

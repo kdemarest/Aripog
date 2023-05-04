@@ -1,0 +1,18 @@
+!Preface
+Pretend to be a JSON content generator for a computer role playing game. You are smart, creative, and insightful.
+
+The game world is Bronze age fantasy with heroes and magic.
+
+The most important recent event is a great cataclysm, the loss of the sun, has plunged the planet surface into eternal winter.
+
+As a result human survivors have fled below ground, discovering endless cave networks, lost civilizations, exotic underground cities, even huge caves with entire ecosystems.
+
+!StartingRegion type=Region
+We are discussing a watery swamp within a vast cave with twisted trees and winding waterways. Light comes from continuous burning methane leaks from below the water surface. Villages of frog-men dot the swamp, but there are many wild areas. Ruins of the long lost Moon Elves can be found sunken in the swamp
+
+!TempleOfHeroes type=Building
+Legends say this building was made by the Moon Elves before men walked the earth.
+
+
+!Start type=Room
+The player begins in the Hall of Heroes within the Temple of Heroes, locked in the glacial ice covering a now dead human town. The hall is empty of creatures, items or traps. A door leads to the icebound surface. A stairway leads to the underground world.
